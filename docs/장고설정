@@ -93,19 +93,19 @@ Application 작업
     2) user
         1.  어플리케이션 추가
             [터미널]
-            python manage.py startapp emaillist
+            python manage.py startapp user
         2. 어플리케이션 등록 (settings.py)
             INSTALLED_APPS = [
-                'emaillist',
+                'user',
                 ...,
                 ...
             ]
         3. template
-                |---- emaillist
+                |---- user
            어플리케이션 template 디렉토리 생성
         4-1. Model 정의
         4-2. admin.py 에
-             admin.site.register(Emaillist)
+             admin.site.register(User)
         4-3. migration 이름의 DDL python 모듈을 생성
              python manage.py makemigrations
         4-4. 물리DB와 스키마 동기화 작업을 한다.
