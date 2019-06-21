@@ -19,6 +19,8 @@ from django.urls import path
 import main.views as main_views
 import user.views as user_views
 import guestbook.views as guestbook_views
+import board.views as board_views
+
 
 urlpatterns = [
     path('', main_views.index),
@@ -38,5 +40,14 @@ urlpatterns = [
     path('user/update', user_views.update),
     path('user/api/checkemail', user_views.checkemail),
 
+    path('board/', board_views.list),
+    path('board/write', board_views.write),
+    path('board/write/insert', board_views.write_insert),
+    path('board/view/<int:id>', board_views.view),
+    path('board/view/modify/<int:id>', board_views.modify),
+    path('board/view/update/<int:id>', board_views.update),
+    path('board/delete/<int:id>', board_views.delete),
+
     path('admin/', admin.site.urls),
 ]
+

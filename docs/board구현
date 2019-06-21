@@ -1,6 +1,6 @@
 1. limit 처리
    start = (page-1)*pagesize
-   Board.objects.all().order_by('-refdate')[start:start+pagesize]
+   Board.objects.all().order_by('-regdate')[start:start+pagesize]
 
 2. insert
     board = Board()

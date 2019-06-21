@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'pysite',
         'USER': 'pysite',
         'PASSWORD': 'pysite',
-        'HOST': '192.168.1.250',
+        'HOST': '192.168.1.104',
         'PORT': 5432
     }
 }
