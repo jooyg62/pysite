@@ -1,7 +1,7 @@
 import math
 
 from django.db.models import Max, Q
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseServerError, Http404
 from django.shortcuts import render
 
 from board.models import Board
@@ -30,7 +30,7 @@ def list(request):
     #   tot_board_count             :   전체 게시물 수
     #   page_per_size               :   페이지당 게시물 개수
     #   tot_paging_size             :   최대로 넘길 수 있는 페이지 넘버
-    #   paging_num_size             :   한 화면에 몇게의 페이징을 줄 것 인지.(1 2 3 4 5)
+    #   paging_num_size             :   화면에 몇개의 페이징을 줄 것 인지.(1 2 3 4 5)
     #   start_view_paging_num       :   시작 페이징 번호
     #   is_pre_page                 :   이전 페이징으로 갈수 있는지 여부
     #   is_after_page               :   이후 페이징으로 갈수 있는지 여부
@@ -50,7 +50,7 @@ def list(request):
     start = (cur_paging_num-1) * page_per_size
     board_list = board_list[start:start+page_per_size]
 
-    # 4. 데이터 담기
+    # 5. 데이터 담기
     data['kwd'] = kwd
 
     data['board_list'] = board_list

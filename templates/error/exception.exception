@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Oooops! - ${uri }</h1>
+	<p>
+		예외발생</br>
+		=========================================<br>
+	</p>
+</body>
+</html>
