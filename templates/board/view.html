@@ -27,7 +27,9 @@
 				</table>
 				<div class="bottom">
 					<a href="/board?kwd={{ kwd }}&cur_paging_num={{ cur_paging_num }}">글목록</a>
+					{% if request.session.authuser is not None and request.session.authuser.id == board.user.id %}
 					<a href="/board/view/modify/{{ board.id }}?kwd={{ kwd }}&cur_paging_num={{ cur_paging_num }}">글수정</a>
+					{% endif %}
 				</div>
 			</div>
 {% endblock %}

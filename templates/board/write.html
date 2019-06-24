@@ -8,7 +8,7 @@
 
 {% block content %}
 			<div id="board">
-				<form class="board-form" method="post" action="/board/write/insert">
+				<form class="board-form" method="post" action="/board/write/insert?kwd={{ kwd }}&cur_paging_num={{ cur_paging_num }}">
 					{% csrf_token %}
 					<table class="tbl-ex">
 						<tr>
@@ -26,7 +26,7 @@
 						</tr>
 					</table>
 					<div class="bottom">
-						<a href="/board">취소</a>
+						<a href="/board?kwd={{ kwd }}&cur_paging_num={{ cur_paging_num }}">취소</a>
 						<input type="submit" value="등록">
 					</div>
 				</form>				

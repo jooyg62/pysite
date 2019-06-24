@@ -67,7 +67,7 @@
 				<!-- pager 추가 -->
 				<div class="bottom">
 					{% if request.session.authuser is not None %}
-						<a href="/board/write" id="new-book">글쓰기</a>
+						<a href="/board/write?kwd={{ kwd }}&cur_paging_num={{ cur_paging_num }}" id="new-book">글쓰기</a>
 					{% endif %}
 				</div>				
 			</div>

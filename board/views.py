@@ -124,10 +124,23 @@ def update(request, id=0):
 
 
 def write(request):
-    return render(request, 'board/write.html')
+    data = {}
+
+    # 키워드, 페이지 히스토리 전달
+    kwd = request.GET.get('kwd', '')
+    cur_paging_num = request.GET.get('cur_paging_num', '')
+
+    data['kwd'] = kwd
+    data['cur_paging_num'] = cur_paging_num
+
+    return render(request, 'board/write.html', data)
 
 
 def write_insert(request):
+    # 키워드, 페이지 히스토리 전달
+    kwd = request.GET.get('kwd', '')
+    cur_paging_num = request.GET.get('cur_paging_num', '')
+
     board = Board()
     board.title = request.POST['title']
     board.contents = request.POST['content']
@@ -144,7 +157,7 @@ def write_insert(request):
 
     board.save()
 
-    return HttpResponseRedirect('/board')
+    return HttpResponseRedirect('/board?kwd=' + kwd + '&cur_paging_num=' + cur_paging_num)
 
 
 def delete(request, id=0):
